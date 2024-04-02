@@ -8,23 +8,23 @@ const archiver = require("archiver");
 exports.uploadImages = async (req, res) => {
   try {
     // Procesar las imágenes subidas
-    const uploadedImages = req.files;
-    const { compressionLevel, format, resizeWidth, resizeHeight } = req.body;
-    const action = req.body.action;
+    const uploadedImages = req.files; // Imágenes subidas por Multer
+    const { compressionLevel, format, resizeWidth, resizeHeight } = req.body; // Parámetros de la solicitud
+    const action = req.body.action; // Acción a realizar en las imágenes
 
-    let processedImages;
+    let processedImages; // Imágenes procesadas
 
-    if (action === "compression") {
+    if (action === "compression") { // Comprimir las imágenes
       processedImages = await compressionController.compressImages(
         uploadedImages,
         compressionLevel
       );
-    } else if (action === "formatChange") {
+    } else if (action === "formatChange") { // Cambiar el formato de las imágenes
       processedImages = await formatConversionController.convertFormat(
         uploadedImages,
         format
       );
-    } else if (action === "resize") {
+    } else if (action === "resize") { // Redimensionar las imágenes
       // Convertir los valores de ancho y alto a números enteros
       const parsedWidth = parseInt(resizeWidth, 10);
       const parsedHeight = parseInt(resizeHeight, 10);
@@ -41,7 +41,7 @@ exports.uploadImages = async (req, res) => {
         parsedHeight
       );
     } else {
-      throw new Error("Acción no válida");
+      throw new Error("Acción no válida"); 
     }
     if (processedImages.length === 1) {
       const image = processedImages[0];
