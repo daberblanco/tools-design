@@ -45,18 +45,18 @@ const Dropzone = () => {
       img.src = URL.createObjectURL(file);
     });
   };
-  
+
   const handleFiles = async (files) => {
     if (files.length > 20) {
       alert("Solo se permiten un máximo de 20 imágenes por intento.");
       return;
     }
-  
+
     const newImages = [];
-  
+
     for (const file of files) {
       const dimensions = await getImageDimensions(file);
-  
+
       const imageObject = {
         id: Math.random().toString(36).substr(2, 9),
         name: file.name,
@@ -67,13 +67,13 @@ const Dropzone = () => {
         naturalWidth: dimensions.naturalWidth,
         naturalHeight: dimensions.naturalHeight,
       };
-  
+
       newImages.push(imageObject);
     }
-  
+
     setImages((prevImages) => [...prevImages, ...newImages]);
   };
-  
+
   const removeImage = (id) => {
     setImages((prevImages) => prevImages.filter((image) => image.id !== id));
   };
@@ -136,7 +136,7 @@ const Dropzone = () => {
         formData.append("format", selectedFormat);
       } else if (selectedAction === "resize") {
         formData.append("resizeWidth", String(resizeWidth)); // Convertir a cadena antes de agregar al FormData
-formData.append("resizeHeight", String(resizeHeight)); // Convertir a cadena antes de agregar al FormData
+        formData.append("resizeHeight", String(resizeHeight)); // Convertir a cadena antes de agregar al FormData
 
         formData.append("maintainAspectRatio", maintainAspectRatio);
         formData.append("doNotEnlarge", doNotEnlarge);
@@ -211,7 +211,7 @@ formData.append("resizeHeight", String(resizeHeight)); // Convertir a cadena ant
       default:
         return "Desconocido";
     }
-  }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center mt-10 mb-10 space-y-8">
@@ -308,7 +308,9 @@ formData.append("resizeHeight", String(resizeHeight)); // Convertir a cadena ant
                       ? `${image.naturalWidth} x ${image.naturalHeight}`
                       : "N/A"}
                   </p>
-                  <p className="text-sm text-gray-600">Formato: {formatType(image.type)}</p>
+                  <p className="text-sm text-gray-600">
+                    Formato: {formatType(image.type)}
+                  </p>
                   {/* Mostrar información adicional según la acción seleccionada */}
                   {selectedAction && (
                     <div className="text-sm font-semibold text-blue-600">
@@ -322,7 +324,9 @@ formData.append("resizeHeight", String(resizeHeight)); // Convertir a cadena ant
                         </p>
                       )}
                       {selectedAction === "formatChange" && (
-                        <p>Formato Cambiado a: {selectedFormat.toUpperCase()}</p>
+                        <p>
+                          Formato Cambiado a: {selectedFormat.toUpperCase()}
+                        </p>
                       )}
                       {selectedAction === "resize" && (
                         <p>
