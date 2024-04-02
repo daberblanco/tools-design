@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Tools Design | Herramientas Multimedia
+Compress, Resize and Convert files |
+Comprime, Redimensiona y Convierte Imágenes en un Solo Lugar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Created by Daber Blanco M. 2024
 
-## Available Scripts
+Created using ReactJS with TailwindCSS for frontend view and NodeJS for backend server.
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Use the package manager [npm](https://www.npmjs.com/) to install the packages of the project.
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
+## Start Frontend ReactJS
+Start project for dev environment
+```javascript
+npm start
+```
+Builds the app for production to the build folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation Backend
 
-### `npm run eject`
+Use the package manager [npm](https://www.npmjs.com/) to install the packages of the project.
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Start NodeJS Server
+Start project for dev environment
+```javascript
+node app.js
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+I used the [Jimp Package](https://www.npmjs.com/package/jimp) for resize images and convert to another format
 
-## Learn More
+### Resize
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Image resizing adjusts the size of a picture. It works by estimating the colors of new pixels based on existing ones using techniques like interpolation. The resizing algorithm determines how this is done. It's important to maintain the aspect ratio to prevent distortion. Anti-aliasing helps smooth out jagged edges for a better-looking resized image.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Resize Image](https://qph.cf2.quoracdn.net/main-qimg-2b5852248679e34d07fabfd15940409b)
 
-### Code Splitting
+### Conversion Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Image format conversion involves the interpretation and reinterpretation of an image's pixel data from one format to another. Each image format has its own data structure and compression methods. During conversion, this data is decompressed, if necessary, and then re-encoded into the destination format, respecting the specific restrictions and characteristics of the new format. This process involves direct manipulation of the image's binary data, ensuring that the visual information is preserved as faithfully as possible in the new format.
 
-### Analyzing the Bundle Size
+### Compression Files
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Compressing images Sharp package involves reducing the image size by adjusting the compression quality. When you specify a compression percentage, the Sharp package adjusts the image compression parameters, such as the quality level of the compression algorithm, the compression factor, and the amount of color information retained in the image. This may include reducing the amount of pixel data stored, lowering image resolution, and removing redundant details to achieve a smaller image file. However, it is important to note that higher compression can lead to a noticeable loss of visual quality, especially in images with detailed or high-resolution content.
 
-### Making a Progressive Web App
+![Compres Image](https://www.image-engineering.de/content/library/technotes/2011_09_19/algorithm.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### From Costa Rica to the world :)
